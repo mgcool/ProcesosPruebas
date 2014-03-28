@@ -125,6 +125,7 @@ class FlujoController {
         def companias = Compania.findAllWhere(numeprom: numprom)
         //def     companias = [type:companiasList]
         render(template: "compania", model: [list: companias])
+        
     }
     
     def common(){
