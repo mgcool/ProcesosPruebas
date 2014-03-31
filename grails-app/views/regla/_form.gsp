@@ -36,7 +36,7 @@
 		
 	</label>
 	<!--<g:textField name="objAfe1" value="${reglaInstance?.objAfe1}"/>-->
-                   <g:select name="objAfe1" from="${['CO_CHECKLIST', 'CO_CIERREPAREJAS', 'CO_COMISIONXLOCACION', 'CO_ESCALA_VENDEDOR', 'CO_PLATILLA_OVERRIDE', 'PRUEBAS']}" value="${reglaInstance?.objAfe1}" noSelection="${['null':'- Seleccione objeto -']}" />
+                   <g:select name="objAfe1" from="${['CO_CHECKLIST', 'CO_CIERREPAREJAS', 'CO_COMISIONXLOCACION', 'CO_ESCALA_VENDEDOR', 'CO_PLATILLA_OVERRIDE', 'PRUEBAS']}" value="${reglaInstance?.objAfe1}" noSelection="${['':'- Seleccione objeto -']}" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reglaInstance, field: 'attrAfe1', 'error')} ">
@@ -45,7 +45,7 @@
 		
 	</label>
 	<!--<g:textField name="attrAfe1" value="${reglaInstance?.attrAfe1}"/>-->
-                   <g:select name="attrAfe1" from="${['IDCONTRATO', 'NUMEROCOMPANIA', 'NUMEROCONTRATO', 'FECHACONTRATO', 'FECHAENGANCHE', 'FECHAPROCESABLE', 'PROCESABLE', 'COMISIONABLE', 'COMISIONADO', 'NUMEROPROMOTORA', 'VENTA', 'TIPOCAMBIO', 'PROCESABLE', 'COSTO']}" value="${reglaInstance?.attrAfe1}" noSelection="${['null':'- Seleccione atributo -']}" />
+                   <g:select name="attrAfe1" from="${['IDCONTRATO', 'NUMEROCOMPANIA', 'NUMEROCONTRATO', 'FECHACONTRATO', 'FECHAENGANCHE', 'FECHAPROCESABLE', 'PROCESABLE', 'COMISIONABLE', 'COMISIONADO', 'NUMEROPROMOTORA', 'VENTA', 'TIPOCAMBIO', 'PROCESABLE', 'COSTO']}" value="${reglaInstance?.attrAfe1}" noSelection="${['':'- Seleccione atributo -']}" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reglaInstance, field: 'operador1', 'error')} ">
@@ -54,7 +54,7 @@
 		
 	</label>
 	<!--<g:textField name="operador1" value="${reglaInstance?.operador1}"/>-->
-                   <g:select name="operador1" from="${['<', '=']}" value="${reglaInstance?.operador1}" noSelection="${['null':'- Seleccione operador -']}" />
+                   <g:select name="operador1" from="${['<', '=']}" value="${reglaInstance?.operador1}" noSelection="${['':'- Seleccione operador -']}" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reglaInstance, field: 'valorAsignado1', 'error')} ">
@@ -71,7 +71,7 @@
 		
 	</label>
 	<!--<g:textField name="condicion" value="${reglaInstance?.condicion}"/>-->
-                   <g:select name="condicion" from="${['si', 'si no', 'no']}" value="${reglaInstance?.condicion}" noSelection="${['null':'- Seleccione condicion -']}" />
+                   <g:select name="condicion" from="${['si', 'si no', 'no']}" value="${reglaInstance?.condicion}" noSelection="${['':'- Seleccione condicion -']}" />
 </div>
 
 <br><hr>
@@ -84,7 +84,7 @@
 		
 	</label>
 	<!--<g:textField name="objCond1" value="${reglaInstance?.objCond1}"/>-->
-                   <g:select name="objCond1" from="${['CONTRATO', 'FINACIAMIENTO', 'PRUEBAS']}" value="${reglaInstance?.objCond1}" noSelection="${['null':'- Seleccione objeto -']}" />
+                   <g:select name="objCond1" from="${['CONTRATO', 'FINACIAMIENTO', 'PRUEBAS']}" value="${reglaInstance?.objCond1}" noSelection="${['':'- Seleccione objeto -']}" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reglaInstance, field: 'attrCond1', 'error')} ">
@@ -93,7 +93,7 @@
 		
 	</label>
 	<!--<g:textField name="attrCond1" value="${reglaInstance?.attrCond1}"/>-->
-                   <g:select name="attrCond1" from="${['FECHA', 'FECHA_ENGANCHE', 'PROCESABLE', 'COSTO']}" value="${reglaInstance?.attrCond1}" noSelection="${['null':'- Seleccione atributo -']}" />
+                   <g:select name="attrCond1" from="${['FECHA', 'FECHA_ENGANCHE', 'PROCESABLE', 'COSTO']}" value="${reglaInstance?.attrCond1}" noSelection="${['':'- Seleccione atributo -']}" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reglaInstance, field: 'valorCondicion1', 'error')} ">
@@ -114,7 +114,7 @@
 		
 	</label>
 	<!--<g:textField name="operadorCondicion" value="${reglaInstance?.operadorCondicion}"/>-->
-                   <g:select name="operadorCondicion" from="${['<', '=']}" value="${reglaInstance?.operadorCondicion}" noSelection="${['null':'- Seleccione operador -']}" />
+                   <g:select name="operadorCondicion" from="${['<', '=']}" value="${reglaInstance?.operadorCondicion}" noSelection="${['':'- Seleccione operador -']}" />
 </div>
 
 <br><hr>
@@ -127,7 +127,7 @@
 		
 	</label>
 	<!--<g:textField name="objCond2" value="${reglaInstance?.objCond2}"/>-->
-                   <g:select name="objCond2" from="${['CONTRATO', 'FINACIAMIENTO', 'PRUEBAS']}" value="${reglaInstance?.objCond2}" noSelection="${['null':'- Seleccione objeto -']}" />
+                   <g:select name="objCond2" from="${['CONTRATO', 'FINACIAMIENTO', 'PRUEBAS']}" value="${reglaInstance?.objCond2}" noSelection="${['':'- Seleccione objeto -']}" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reglaInstance, field: 'attrCond2', 'error')} ">
@@ -136,7 +136,7 @@
 		
 	</label>
 	<!--<g:textField name="attrCond2" value="${reglaInstance?.attrCond2}"/>-->
-                    <g:select name="attrCond2" from="${['FECHA', 'FECHA_ENGANCHE', 'PROCESABLE', 'COSTO']}" value="${reglaInstance?.attrCond2}" noSelection="${['null':'- Seleccione atributo -']}" />
+                    <g:select name="attrCond2" from="${['FECHA', 'FECHA_ENGANCHE', 'PROCESABLE', 'COSTO']}" value="${reglaInstance?.attrCond2}" noSelection="${['':'- Seleccione atributo -']}" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reglaInstance, field: 'valorCondicion2', 'error')} ">
@@ -157,7 +157,7 @@
 		
 	</label>
 	<!--<g:textField name="operadorEnlace" value="${reglaInstance?.operadorEnlace}"/>-->
-                   <g:select name="operadorEnlace" from="${['AND', 'OR']}" value="${reglaInstance?.operadorEnlace}" noSelection="${['null':'- Seleccione operador enlace -']}" />
+                   <g:select name="operadorEnlace" from="${['AND', 'OR']}" value="${reglaInstance?.operadorEnlace}" noSelection="${['':'- Seleccione operador enlace -']}" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reglaInstance, field: 'condicionEnlazada', 'error')} ">
@@ -166,7 +166,7 @@
 		
 	</label>
 	<!--<g:textField name="condicionEnlazada" value="${reglaInstance?.condicionEnlazada}"/>-->
-                  <g:select name="condicionEnlazada" from="${['RV_2', 'RV_3', 'RV_4']}" value="${reglaInstance?.condicionEnlazada}" noSelection="${['null':'- Seleccione regla enlazada -']}" />
+                  <g:select name="condicionEnlazada" from="${['RV_2', 'RV_3', 'RV_4']}" value="${reglaInstance?.condicionEnlazada}" noSelection="${['':'- Seleccione regla enlazada -']}" />
 </div>
 
 <br><hr>

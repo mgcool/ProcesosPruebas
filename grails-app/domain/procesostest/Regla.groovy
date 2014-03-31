@@ -26,5 +26,19 @@ class Regla {
     String  condicionEnlazada
     
     static constraints = {
+                    objAfe1(blank: true, nullable: true)
+                    attrAfe1(blank: true, nullable: true)
+                    operador1(blank: true, nullable: true)
+                    valorAsignado1(blank: true, nullable: true)
+                    condicion(blank: true, nullable: true)
+                    objCond1(blank: true, nullable: true)
+                    attrCond1(blank: true, nullable: true)
+                    operadorCondicion(blank: true, nullable: true)
+                    valorCondicion1(blank: true, nullable: true)
+                    objCond2(blank: true, nullable: true)
+                    attrCond2(blank: true, nullable: true)
+                    valorCondicion2(blank: true, nullable: true)
+                    operadorEnlace(blank: true, nullable: true)
+                    condicionEnlazada(blank: true, nullable: true)
     }
 }

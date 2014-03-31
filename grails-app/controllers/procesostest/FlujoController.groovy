@@ -174,11 +174,97 @@ class FlujoController {
                                                          reglas.each{   //empieza el ciclo de reglas
                                                            println "Ejecutando sentencia de la regla"+"\n==================================="
                                                            println ""
-
-                                                            String query = ("UPDATE $it.objAfe1 SET $it.attrAfe1 = $it.valorAsignado1 WHERE $it.objCond1.$it.attrCond1 $it.operadorCondicion $it.valorCondicion2") 
+                                                           
+                                                           if (it.objAfe1 == null || it.objAfe1 == ''){
+                                                                     it.objAfe1 = ''
+                                                            }else{
+                                                                    it.objAfe1 = it.objAfe1
+                                                             }
+                    
+                                                            if (it.attrAfe1 == null || it.attrAfe1 == ''){
+                                                                    it.attrAfe1 = ''
+                                                            }else{
+                                                                    it.attrAfe1 = it.attrAfe1
+                                                            }
+                    
+                                                             if (it.operador1 == null || it.operador1 == ''){
+                                                                    it.operador1 = ''
+                                                             }else{
+                                                                    it.operador1 = it.operador1
+                                                            }
+        
+                                                            if (it.valorAsignado1 == null || it.valorAsignado1 == ''){
+                                                                    it.valorAsignado1 = ''
+                                                            }else{
+                                                                    it.valorAsignado1 = it.valorAsignado1
+                                                            }
+                    
+                                                             if (it.condicion == null || it.condicion == ''){
+                                                                    it.condicion = ''
+                                                            }else{
+                                                                    it.condicion = it.condicion
+                                                            }
+                    
+                                                            if (it.objCond1 == null || it.objCond1 == ''){
+                                                                    it.objCond1 = ''
+                                                             }else{
+                                                                    it.objCond1 = it.objCond1
+                                                            }
+                    
+                                                            if (it.attrCond1 == null || it.attrCond1 == ''){
+                                                                    it.attrCond1 = ''
+                                                            }else{
+                                                                    it.attrCond1 = it.attrCond1
+                                                            }
+                    
+                                                            if (it.operadorCondicion == null || it.operadorCondicion == ''){
+                                                                    it.operadorCondicion = ''
+                                                            }else{
+                                                                    it.operadorCondicion = it.operadorCondicion
+                                                            }
+                    
+                                                            if (it.valorCondicion1 == null || it.valorCondicion1 == ''){
+                                                                    it.valorCondicion1 = ''
+                                                            }else{
+                                                                    it.valorCondicion1 = it.valorCondicion1
+                                                            }
+                    
+                                                           if (it.objCond2 == null || it.objCond2 == ''){
+                                                                    it.objCond2 = ''
+                                                            }else{
+                                                                    it.objCond2 = it.objCond2+'.'
+                                                            }
+                     
+                                                           if (it.attrCond2 == null || it.attrCond2 == ''){
+                                                                    it.attrCond2 = ''
+                                                            }else{
+                                                                    it.attrCond2 = it.attrCond2
+                                                            }
+                     
+                                                           if (it.valorCondicion2 == null || it.valorCondicion2 == ''){
+                                                                    it.valorCondicion2 = ''
+                                                           }else{
+                                                                    it.valorCondicion2 = it.valorCondicion2
+                                                            }
+                    
+                                                            if (it.operadorEnlace == null || it.operadorEnlace == ''){
+                                                                    it.operadorEnlace = ''
+                                                            }else{
+                                                                    it.operadorEnlace = it.operadorEnlace
+                                                            }
+                    
+                                                            if (it.condicionEnlazada == null || it.condicionEnlazada == ''){
+                                                                    it.condicionEnlazada = ''
+                                                            }else{
+                                                                    it.condicionEnlazada = it.condicionEnlazada
+                                                            } 
+                                                            
+                                                            String query = ("UPDATE $it.objAfe1 SET $it.attrAfe1 $it.operador1 $it.valorAsignado1 $it.condicion WHERE $it.objCond1.$it.attrCond1 $it.operador1 $it.objCond2$it.attrCond2$it.valorCondicion2 $it.operadorEnlace $it.condicionEnlazada") 
+                                                            
+                                
                                                             println(query)
                                                             render(query+"<br>")
-                                                            def sql = Sql.newInstance(dataSource)
+                                                            def sql = Sql.newInstance(dataSource) 
                                                             try {
                                                                 sql.execute(query)
                                                                 render("<strong>Query ejecutado!</strong> <br>")
