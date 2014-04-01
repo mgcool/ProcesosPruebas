@@ -41,4 +41,9 @@ class Regla {
                     operadorEnlace(blank: true, nullable: true)
                     condicionEnlazada(blank: true, nullable: true)
     }
+    
+    /*String toString() {
+        "$id - $nombcomp"
+    }*/
+    
 }
