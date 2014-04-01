@@ -166,7 +166,7 @@
 		
 	</label>
 	<!--<g:textField name="condicionEnlazada" value="${reglaInstance?.condicionEnlazada}"/>-->
-                  <g:select name="condicionEnlazada" from="${['RV_2', 'RV_3', 'RV_4']}" value="${reglaInstance?.condicionEnlazada}" noSelection="${['':'- Seleccione regla enlazada -']}" />
+                  <g:select name="condicionEnlazada" from="${procesostest.Regla.list()}" optionKey="id" optionValue="id" value="${reglaInstance?.condicionEnlazada}" multiple="multiple" noSelection="${['':'- Seleccione regla enlazada -']}" />
 </div>
 
 <br><hr>
