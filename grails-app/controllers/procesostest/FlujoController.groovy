@@ -175,24 +175,23 @@ class FlujoController {
                                                            println "Ejecutando sentencia de la regla"+"\n==================================="
                                                            println ""
                                                             
-                                                            String q = ("UPDATE $it.objAfe1 SET $it.attrAfe1 $it.operador1 $it.valorAsignado1 $it.condicion WHERE $it.objCond1.$it.attrCond1 $it.operadorCondicion $it.objCond2$it.attrCond2$it.valorCondicion2 $it.operadorEnlace") 
+                                                            String q = ("UPDATE $it.objAfe1 SET $it.attrAfe1 $it.operador1 $it.valorAsignado1 $it.condicion WHERE $it.objCond1.$it.attrCond1 $it.operadorCondicion $it.objCond2$it.attrCond2$it.valorCondicion2 $it.operadorEnlace ") 
                                                             String q2
                                 
-                                                            List<String> condicionEnlazada = Arrays.asList(reglas.condicionEnlazada.split("\\s*,\\s*"))//convertir las condiciones enlazadas a un Array
-                                                            //println(condicionEnlazada)
-                                                            
-                                                            condicionEnlazada.each{//ciclo que busca todas las condiciones enlazadas y las concatena al query(q)
-                                                                   Regla rid = Regla.get(it)
-                                                                    q2 = ("AND $rid.objCond1.$rid.attrCond1 $rid.operadorCondicion $rid.objCond2$rid.attrCond2$rid.valorCondicion2")
+                                                            while(it.operadorEnlace != null){
+                                                                    println "Entrando al metodo de comprobacion de reglas"
+                                                                    Regla rid = Regla.get(it.condicionEnlazada)
+                                                                    q2 = ("$rid.objCond1.$rid.attrCond1 $rid.operadorCondicion $rid.objCond2$rid.attrCond2$rid.valorCondicion2 $rid.operadorEnlace |")
                                                                     q+=q2
-                                                                    //println(q2)
-                                                            }
-                                
-                                                            
+                                                                    it.operadorEnlace = rid.operadorEnlace
+                                                                    it.condicionEnlazada = rid.condicionEnlazada
+                                                            } 
+                                                             
                                                            String query = q.replaceAll("null", '')
 
                                                             println(query)
-                                                            /*render(query+"<br>")
+                                                            
+                                                            render(query+"<br>")
                                                             def sql = Sql.newInstance(dataSource) 
                                                             try {
                                                                 sql.execute(query)
@@ -202,7 +201,7 @@ class FlujoController {
                                                                 render("<br>")
                                                             }
                                                             
-                                                            println "\n"*/
+                                                            println "\n"
                                                         }
                                                   }
                                                 
