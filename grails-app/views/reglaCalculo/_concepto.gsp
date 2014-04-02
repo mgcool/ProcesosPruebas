@@ -1,5 +1,5 @@
 <%@ page import="procesostest.Concepto_RC" %>
-<div class="fieldcontain ${hasErrors(bean: reglaCalculoInstance, field: 'formulaExplicita', 'error')} ">
+<!--div class="fieldcontain ${hasErrors(bean: reglaCalculoInstance, field: 'formulaExplicita', 'error')} "-->
 <label for="operadorInicial">
 		<g:message code="reglaCalculo.operadorInicial.label" default="operadorInicial" />
 		<span class="required-indicator">*</span>
@@ -15,4 +15,4 @@
             noSelection="['null':'- Seleccione un CONCEPTO -']"
         />
     <g:select name="opcional2" from="${['(', ')', '']}" value=""  />
-</div>   
+<!--/div-->   

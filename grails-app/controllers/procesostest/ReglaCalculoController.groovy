@@ -30,8 +30,9 @@ class ReglaCalculoController {
         
         for(int cont=0;cont<noConceptos;cont++){
             
-            println("hola")
-            //SSSSSrender(template:"concepto")
+            println("hola"+cont)
+            //render(template:"concept")
+            render("<div id='concept"+cont+"'>concept"+cont+"<br></div>")
         }
         
     }
