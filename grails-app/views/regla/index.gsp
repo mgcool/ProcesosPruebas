@@ -44,7 +44,7 @@
 					
 						<td><g:link action="show" id="${reglaInstance.id}">${fieldValue(bean: reglaInstance, field: "attrAfe1")}</g:link></td>
 					
-						<td>${fieldValue(bean: reglaInstance, field: "attrCond1")}</td>
+						<td><g:link action="show" id="${reglaInstance.id}"> ${fieldValue(bean: reglaInstance, field: "attrCond1")}</g:link></td>
 					
 						<td>${fieldValue(bean: reglaInstance, field: "attrCond2")}</td>
 					
