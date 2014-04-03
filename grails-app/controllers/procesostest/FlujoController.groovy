@@ -181,7 +181,7 @@ class FlujoController {
                                                             while(it.operadorEnlace != null){
                                                                     println "Entrando al metodo de comprobacion de reglas"
                                                                     Regla rid = Regla.get(it.condicionEnlazada)
-                                                                    q2 = ("$rid.objCond1.$rid.attrCond1 $rid.operadorCondicion $rid.objCond2$rid.attrCond2$rid.valorCondicion2 $rid.operadorEnlace |")
+                                                                    q2 = ("$rid.objCond1.$rid.attrCond1 $rid.operadorCondicion $rid.objCond2$rid.attrCond2$rid.valorCondicion2 $rid.operadorEnlace ")
                                                                     q+=q2
                                                                     it.operadorEnlace = rid.operadorEnlace
                                                                     it.condicionEnlazada = rid.condicionEnlazada

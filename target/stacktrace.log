@@ -3604,3 +3604,33 @@ java.lang.NumberFormatException: For input string: "null"
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:724)
+2014-04-03 11:10:47,983 [FileSystemWatcher: files=#233 cl=groovy.lang.GroovyClassLoader@a14174] ERROR StackTrace  - Full Stack Trace:
+java.lang.LinkageError: loader (instance of  org/springsource/loaded/ChildClassLoader): attempted  duplicate class definition for name: "procesostest/FlujoController$$DOaOGguR"
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:792)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:635)
+	at org.springsource.loaded.ChildClassLoader.defineClass(ChildClassLoader.java:37)
+	at org.springsource.loaded.TypeRegistry.defineClass(TypeRegistry.java:1093)
+	at org.springsource.loaded.CurrentLiveVersion.define(CurrentLiveVersion.java:111)
+	at org.springsource.loaded.CurrentLiveVersion.<init>(CurrentLiveVersion.java:99)
+	at org.springsource.loaded.ReloadableType.loadNewVersion(ReloadableType.java:382)
+	at org.springsource.loaded.TypeRegistry.loadNewVersion(TypeRegistry.java:828)
+	at org.springsource.loaded.agent.ReloadableFileChangeListener.fileChanged(ReloadableFileChangeListener.java:51)
+	at org.springsource.loaded.agent.Watcher.determineChangesSince(FileSystemWatcher.java:235)
+	at org.springsource.loaded.agent.Watcher.run(FileSystemWatcher.java:219)
+	at java.lang.Thread.run(Thread.java:724)
+2014-04-03 11:10:47,986 [FileSystemWatcher: files=#233 cl=groovy.lang.GroovyClassLoader@a14174] ERROR StackTrace  - Full Stack Trace:
+java.lang.LinkageError: loader (instance of  org/springsource/loaded/ChildClassLoader): attempted  duplicate class definition for name: "procesostest/FlujoController$$DOaOGguR"
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:792)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:635)
+	at java.lang.Thread.run(Thread.java:724)
+2014-04-03 11:10:47,988 [FileSystemWatcher: files=#233 cl=groovy.lang.GroovyClassLoader@a14174] ERROR StackTrace  - Full Stack Trace:
+java.lang.LinkageError: loader (instance of  org/springsource/loaded/ChildClassLoader): attempted  duplicate class definition for name: "procesostest/FlujoController$$DOaOGguR"
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:792)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:635)
+	at java.lang.Thread.run(Thread.java:724)
+2014-04-03 11:10:47,988 [FileSystemWatcher: files=#233 cl=groovy.lang.GroovyClassLoader@a14174] ERROR StackTrace  - Full Stack Trace:
+java.lang.LinkageError: loader (instance of  org/springsource/loaded/ChildClassLoader): attempted  duplicate class definition for name: "procesostest/FlujoController$$DOaOGguR"
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:792)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:635)
+	at java.lang.Thread.run(Thread.java:724)

@@ -6,7 +6,7 @@
 		<g:message code="reglaCalculo.operadorInicial.label" default="Op.Ini." />
 		<span class="required-indicator">*</span>
 </label>
-   <g:select name="opIni${contador}" from="${['+', '-', '*', '/', '%', '^']}" value="" />
+   <g:select name="opIni${contador}" from="${['', '+', '-', '*', '/', '%', '^']}" value="" />
    <g:select name="opcional1${contador}" from="${['(', ')', '']}" value=""  />
    <label for="cid${contador}">
 		<g:message code="reglaCalculo.concepto.label" default="Concepto" />	
