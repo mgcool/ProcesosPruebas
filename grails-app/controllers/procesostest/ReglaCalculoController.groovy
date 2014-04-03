@@ -26,13 +26,19 @@ class ReglaCalculoController {
     def getConceptos(){
         def numConceptos = params.cvalue
         int noConceptos = Integer.parseInt(numConceptos)
-        println("hola "+ noConceptos)
+        println("getConceptos params: " + params)
         
-        for(int cont=0;cont<noConceptos;cont++){
+        //if (!params.contador){ int cont = 0 }else{cont = params.contador as Integer}
+        int cont = (params?.contador == null) ? 0 : params.contador as Integer
+        
+        for(;cont<noConceptos;cont++){
             
-            println("hola"+cont)
-            //render(template:"concept")
-            render("<div id='concept"+cont+"'>concept"+cont+"<br></div>")
+            println("concepto"+cont)
+            render(template:"concept", model:[contador:cont])
+            //render("<div id='concept"+cont+"'>
+            //concepto"+cont+"<br>
+            
+            //</div>")
         }
         
     }
