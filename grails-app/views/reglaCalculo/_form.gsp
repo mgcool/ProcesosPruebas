@@ -64,7 +64,7 @@
 	</label>
         
         <g:select id="numConceptos" name="numConceptos" from="${1..100}" value='' noSelection="['null':'- Primero defina el numero de conceptos.-']"
-                  onchange="${remoteFunction(action: 'getConceptos', params: '\'cvalue=\'+this.value', update:'conceptos')}" 
+                  onchange="${remoteFunction(action: 'tratarConceptos', params: '\'cvalue=\'+this.value', update:'conceptos')}" 
          />
        
 
