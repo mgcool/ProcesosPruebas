@@ -107,4 +107,5 @@ class SecFlujoController {
         def procesos = Proceso.findAllByFid(flujo)
         render(template: "proceso", model: [list: procesos])
     }
+
 }

@@ -18,10 +18,10 @@
 		<div id="list-proceso" class="content scaffold-list" role="main">
 			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
+				<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<table>
-				<thead>
+			<thead>
 					<tr>
 					
 						<g:sortableColumn property="status" title="${message(code: 'proceso.status.label', default: 'Status')}" />
@@ -42,7 +42,7 @@
 					
 						<td><g:link action="show" id="${procesoInstance.id}">${fieldValue(bean: procesoInstance, field: "status")}</g:link></td>
 					
-						<td><g:link action="show" id="${procesoInstance.id}">${fieldValue(bean: procesoInstance, field: "descripcion")}</g:link></td>
+						<td>${fieldValue(bean: procesoInstance, field: "descripcion")}</td>
 					
 						<td>${fieldValue(bean: procesoInstance, field: "fid")}</td>
 					
@@ -55,7 +55,7 @@
 				</tbody>
 			</table>
 			<div class="pagination">
-                                                                            <g:paginate total="${procesoInstanceCount ?: 0}" />
+				<g:paginate total="${procesoInstanceCount ?: 0}" />
 			</div>
 		</div>
 	</body>

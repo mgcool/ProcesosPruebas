@@ -1,4 +1,3 @@
-<%@ page import="procesostest.Regla" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,7 +10,7 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="create-regla" class="content scaffold-create" role="main">
@@ -26,13 +25,14 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form action="save" >
+			<g:form url="[resource:reglaInstance, action:'save']" >
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">
 					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-				</fieldset>
+                                                                                             <g:submitToRemote url="[action: 'common']" class="sql" value="Obtener query" update="sql"/>
+                                                                           </fieldset>
 			</g:form>
 		</div>
 	</body>

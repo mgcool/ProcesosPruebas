@@ -8,6 +8,7 @@
 		
 	</label>
 	<g:textField name="clavemon" value="${companiaInstance?.clavemon}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: companiaInstance, field: 'nombcomp', 'error')} ">
@@ -16,6 +17,7 @@
 		
 	</label>
 	<g:textField name="nombcomp" value="${companiaInstance?.nombcomp}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: companiaInstance, field: 'numcomp', 'error')} required">
@@ -24,6 +26,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="numcomp" type="number" value="${companiaInstance.numcomp}" required=""/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: companiaInstance, field: 'numdirec', 'error')} required">
@@ -32,6 +35,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="numdirec" type="number" value="${companiaInstance.numdirec}" required=""/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: companiaInstance, field: 'numeprom', 'error')} required">
@@ -40,6 +44,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="numeprom" type="number" value="${companiaInstance.numeprom}" required=""/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: companiaInstance, field: 'numorg', 'error')} required">
@@ -48,6 +53,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="numorg" type="number" value="${companiaInstance.numorg}" required=""/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: companiaInstance, field: 'rfccomp', 'error')} ">
@@ -56,6 +62,7 @@
 		
 	</label>
 	<g:textField name="rfccomp" value="${companiaInstance?.rfccomp}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: companiaInstance, field: 'secontrato', 'error')} required">
@@ -64,6 +71,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="secontrato" type="number" value="${companiaInstance.secontrato}" required=""/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: companiaInstance, field: 'tcambio', 'error')} required">
@@ -72,5 +80,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="tcambio" type="number" value="${companiaInstance.tcambio}" required=""/>
+
 </div>
 

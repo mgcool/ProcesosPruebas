@@ -18,11 +18,13 @@
 		<div id="list-flujo" class="content scaffold-list" role="main">
 			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
+				<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<table>
-				<thead>
+			<thead>
 					<tr>
+					
+						<g:sortableColumn property="status" title="${message(code: 'flujo.status.label', default: 'Status')}" />
 					
 						<g:sortableColumn property="descripcion" title="${message(code: 'flujo.descripcion.label', default: 'Descripcion')}" />
 					
@@ -34,15 +36,15 @@
 					
 						<g:sortableColumn property="iniVig" title="${message(code: 'flujo.iniVig.label', default: 'Ini Vig')}" />
 					
-						<g:sortableColumn property="nomenclatura" title="${message(code: 'flujo.nomenclatura.label', default: 'Nomenclatura')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${flujoInstanceList}" status="i" var="flujoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${flujoInstance.id}">${fieldValue(bean: flujoInstance, field: "descripcion")}</g:link></td>
+						<td><g:link action="show" id="${flujoInstance.id}">${fieldValue(bean: flujoInstance, field: "status")}</g:link></td>
+					
+						<td>${fieldValue(bean: flujoInstance, field: "descripcion")}</td>
 					
 						<td><g:formatDate date="${flujoInstance.finVig}" /></td>
 					
@@ -52,14 +54,12 @@
 					
 						<td><g:formatDate date="${flujoInstance.iniVig}" /></td>
 					
-						<td>${fieldValue(bean: flujoInstance, field: "nomenclatura")}</td>
-					
 					</tr>
 				</g:each>
 				</tbody>
 			</table>
 			<div class="pagination">
-                                                                            <g:paginate total="${flujoInstanceCount ?: 0}" />
+				<g:paginate total="${flujoInstanceCount ?: 0}" />
 			</div>
 		</div>
 	</body>

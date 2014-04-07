@@ -189,7 +189,10 @@ class FlujoController {
                                                              
                                                            String query = q.replaceAll("null", '')
 
-                                                            println(query)
+                                                           println(query)
+                                                            
+                                                            
+                                                            
                                                             
                                                             render(query+"<br>")
                                                             def sql = Sql.newInstance(dataSource) 

@@ -8,6 +8,7 @@
 		
 	</label>
 	<g:textField name="status" value="${procesoInstance?.status}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: procesoInstance, field: 'descripcion', 'error')} ">
@@ -16,6 +17,7 @@
 		
 	</label>
 	<g:textField name="descripcion" value="${procesoInstance?.descripcion}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: procesoInstance, field: 'fid', 'error')} required">
@@ -24,6 +26,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="fid" name="fid.id" from="${procesostest.Flujo.list()}" optionKey="id" required="" value="${procesoInstance?.fid?.id}" class="many-to-one"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: procesoInstance, field: 'finVig', 'error')} required">
@@ -32,6 +35,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:datePicker name="finVig" precision="day"  value="${procesoInstance?.finVig}"  />
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: procesoInstance, field: 'iniVig', 'error')} required">
@@ -40,5 +44,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:datePicker name="iniVig" precision="day"  value="${procesoInstance?.iniVig}"  />
+
 </div>
 

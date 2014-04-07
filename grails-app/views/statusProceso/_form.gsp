@@ -8,5 +8,6 @@
 		
 	</label>
 	<g:textField name="descripcion" value="${statusProcesoInstance?.descripcion}"/>
+
 </div>
 

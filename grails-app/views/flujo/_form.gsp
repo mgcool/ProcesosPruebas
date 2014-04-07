@@ -45,4 +45,3 @@
 	<g:textField name="status" value="${flujoInstance?.status}"/>
 </div>
 
-

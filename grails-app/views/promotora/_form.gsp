@@ -8,5 +8,6 @@
 		
 	</label>
 	<g:textField name="nombre" value="${promotoraInstance?.nombre}"/>
+
 </div>
 

@@ -12,7 +12,7 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
@@ -22,6 +22,15 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list flujo">
+			
+				<g:if test="${flujoInstance?.status}">
+				<li class="fieldcontain">
+					<span id="status-label" class="property-label"><g:message code="flujo.status.label" default="Status" /></span>
+					
+						<span class="property-value" aria-labelledby="status-label"><g:fieldValue bean="${flujoInstance}" field="status"/></span>
+					
+				</li>
+				</g:if>
 			
 				<g:if test="${flujoInstance?.descripcion}">
 				<li class="fieldcontain">
@@ -77,20 +86,10 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${flujoInstance?.status}">
-				<li class="fieldcontain">
-					<span id="status-label" class="property-label"><g:message code="flujo.status.label" default="Status" /></span>
-					
-						<span class="property-value" aria-labelledby="status-label"><g:fieldValue bean="${flujoInstance}" field="status"/></span>
-					
-				</li>
-				</g:if>
-			
 			</ol>
-			<g:form>
+			<g:form url="[resource:flujoInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
-					<g:hiddenField name="id" value="${flujoInstance?.id}" />
-					<g:link class="edit" action="edit" id="${flujoInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+					<g:link class="edit" action="edit" resource="${flujoInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>

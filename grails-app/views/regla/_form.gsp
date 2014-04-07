@@ -36,7 +36,7 @@
 		
 	</label>
 	<!--<g:textField name="objAfe1" value="${reglaInstance?.objAfe1}"/>-->
-                   <g:select name="objAfe1" from="${['CO_CHECKLIST', 'CO_CIERREPAREJAS', 'CO_COMISIONXLOCACION', 'CO_ESCALA_VENDEDOR', 'CO_PLATILLA_OVERRIDE', 'PRUEBAS']}" value="${reglaInstance?.objAfe1}" noSelection="${['':'- Seleccione objeto -']}" />
+                   <g:select id="objAfe1" name="objAfe1" from="${['CO_CHECKLIST', 'CO_CIERREPAREJAS', 'CO_COMISIONXLOCACION', 'CO_ESCALA_VENDEDOR', 'CO_PLATILLA_OVERRIDE', 'PRUEBAS']}" value="${reglaInstance?.objAfe1}" noSelection="${['':'- Seleccione objeto -']}" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reglaInstance, field: 'attrAfe1', 'error')} ">
@@ -45,7 +45,7 @@
 		
 	</label>
 	<!--<g:textField name="attrAfe1" value="${reglaInstance?.attrAfe1}"/>-->
-                   <g:select name="attrAfe1" from="${['IDCONTRATO', 'NUMEROCOMPANIA', 'NUMEROCONTRATO', 'FECHACONTRATO', 'FECHAENGANCHE', 'FECHAPROCESABLE', 'PROCESABLE', 'COMISIONABLE', 'COMISIONADO', 'NUMEROPROMOTORA', 'VENTA', 'TIPOCAMBIO', 'PROCESABLE', 'COSTO']}" value="${reglaInstance?.attrAfe1}" noSelection="${['':'- Seleccione atributo -']}" />
+                   <g:select id="attrAfe1" name="attrAfe1" from="${['IDCONTRATO', 'NUMEROCOMPANIA', 'NUMEROCONTRATO', 'FECHACONTRATO', 'FECHAENGANCHE', 'FECHAPROCESABLE', 'PROCESABLE', 'COMISIONABLE', 'COMISIONADO', 'NUMEROPROMOTORA', 'VENTA', 'TIPOCAMBIO', 'PROCESABLE', 'COSTO']}" value="${reglaInstance?.attrAfe1}" noSelection="${['':'- Seleccione atributo -']}" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reglaInstance, field: 'operador1', 'error')} ">
@@ -166,7 +166,7 @@
 		
 	</label>
 	<!--<g:textField name="condicionEnlazada" value="${reglaInstance?.condicionEnlazada}"/>-->
-                  <g:select name="condicionEnlazada" from="${procesostest.Regla.list()}" optionKey="id" optionValue="id" value="${reglaInstance?.condicionEnlazada}" multiple="multiple" noSelection="${['':'- Seleccione regla enlazada -']}" />
+                  <g:select name="condicionEnlazada" from="${procesostest.Regla.list()}" optionKey="id" optionValue="id" value="${reglaInstance?.condicionEnlazada}" noSelection="${['':'- Seleccione regla enlazada -']}"  />
 </div>
 
 <br><hr>
@@ -188,4 +188,13 @@
 	</label>
 	<g:datePicker name="finVig" precision="day"  value="${reglaInstance?.finVig}"  />
 </div>
+
+<div id="sql" class="fieldcontain ${hasErrors(bean: reglaInstance, field: 'sql', 'error')} required">
+	<label for="sql">
+		<g:message code="regla.sql.label" default="Sql" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textArea name="sql" value="${reglaInstance?.sql}"  rows="5" cols="50"/>
+</div>
+
 

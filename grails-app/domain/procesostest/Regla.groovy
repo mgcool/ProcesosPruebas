@@ -24,6 +24,7 @@ class Regla {
     String  valorCondicion2
     String  operadorEnlace
     String  condicionEnlazada
+    String  sql
     
     static constraints = {
                     objAfe1(blank: true, nullable: true)
@@ -40,6 +41,7 @@ class Regla {
                     valorCondicion2(blank: true, nullable: true)
                     operadorEnlace(blank: true, nullable: true)
                     condicionEnlazada(blank: true, nullable: true)
+                    sql(blank: true, nullable: true)
     }
     
     /*String toString() {
