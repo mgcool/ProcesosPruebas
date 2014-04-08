@@ -109,6 +109,69 @@ class ReglaCalculoController {
                
     }
     
+    def formaExplicita(ReglaCalculo reglaCalculoInstance){
+         if (reglaCalculoInstance == null) {
+            println(reglaCalculoInstance)
+            notFound()
+            return
+        }
+        
+        int i=0
+        String f, f2
+        String checkboxes
+        println("presave: "+params)        
+        println("NumConceptos"+params.numConceptos+"\n")
+        //Declaramos variable que encuentra todos los checkboxes marcados
+        params.checkboxes
+        checkboxes = params.findAll{def x=it.key.startsWith("query_")}
+        List<String> listCheckboxes = Arrays.asList(checkboxes.split("\\s*,\\s*")) //Convirtiendo el string en un ArrayList con el metodo "split", separa los elementos por coma, espacios o zeros
+        def m
+        String query
+        def sql = Sql.newInstance(dataSource) 
+        //recorremos primero los parametros que se marcaron (como query)
+        listCheckboxes.eachWithIndex{ item, indez ->
+                //render ("${indez} : ${item}")
+                def matcher = item =~ "[0-9]+"
+                matcher.each { 
+                    println(it+"<-checked\n")  
+                    m=it.toInteger()
+                    //evaluar query para cid en esa posicion
+                    println(m+":")
+                    //render(this.params.opIni[m]+this.params.opt1[m]+this.params.cid[m]+this.params.opt2[m])            
+                    println(this.params.cid[m]+"\n")
+                    query = this.params.cid[m]
+                    
+                    try {
+                        //sql.execute(query)
+                        sql.eachRow(query){ row ->
+                            println("${row[0]}")
+                            this.params.cid[m] = row[0]
+                        }
+                        println("<strong>Query ejecutado!</strong> <br>")
+                    } catch (Exception e){
+                        println(e)
+                        println("\n")
+                    }                   
+                }
+        }//termina listCheckboxes
+        
+        def evalFormula
+        println("\nConcatenando formula:\n")            
+        params.contador.each{            
+            println(this.params.opIni[i]+this.params.opt1[i]+this.params.cid[i]+this.params.opt2[i])
+            evalFormula += this.params.opIni[i]+this.params.opt1[i]+this.params.cid[i]+this.params.opt2[i]
+            i++;
+        }   
+        
+        //  this.params.formulaExplicita
+        String formaExplicita = evalFormula.replaceAll("null", '') //borramos nulos
+        this.params.formulaExplicita = formaExplicita
+        def resultado = Eval.me(formaExplicita)
+        println("\nResultado: "+resultado)
+        //render("<br>Presave params: <br>"+params+"<br>")
+        render(template: "concepto",  model:[formulaExplicita: formaExplicita]) 
+    }
+    
     @Transactional
     def save(ReglaCalculo reglaCalculoInstance) {
         if (reglaCalculoInstance == null) {

@@ -29,12 +29,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: reglaCalculoInstance, field: 'formulaExplicita', 'error')} ">
+<div id="formaExplicita" class="fieldcontain ${hasErrors(bean: reglaCalculoInstance, field: 'formulaExplicita', 'error')} ">
 	<label for="formulaExplicita">
 		<g:message code="reglaCalculo.formulaExplicita.label" default="Formula Explicita, sera determinada por los conceptos seleccionados" />
 		
 	</label>
-	<!--g:textField name="formulaExplicita" value="${reglaCalculoInstance?.formulaExplicita}"/-->
+	<g:textField name="formulaExplicita" value="${reglaCalculoInstance?.formulaExplicita}"/>
 
 </div>
 
