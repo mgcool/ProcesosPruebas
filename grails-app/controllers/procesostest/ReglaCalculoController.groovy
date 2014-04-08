@@ -140,18 +140,18 @@ class ReglaCalculoController {
                     //render(this.params.opIni[m]+this.params.opt1[m]+this.params.cid[m]+this.params.opt2[m])            
                     println(this.params.cid[m]+"\n")
                     query = this.params.cid[m]
-                    
-                    try {
+                    //Sin ejecucion de query, hasta que se llame a ejecucion la regla
+                    //try {
                         //sql.execute(query)
-                        sql.eachRow(query){ row ->
-                            println("${row[0]}")
-                            this.params.cid[m] = row[0]
-                        }
-                        println("<strong>Query ejecutado!</strong> <br>")
-                    } catch (Exception e){
-                        println(e)
-                        println("\n")
-                    }                   
+                        //sql.eachRow(query){ row ->
+                        //    println("${row[0]}")
+                            //this.params.cid[m] = row[0]
+                        //}
+                        //println("<strong>Query ejecutado!</strong> <br>")
+                    //} catch (Exception e){
+                    //    println(e)
+                    //    println("\n")
+                    //}                   
                 }
         }//termina listCheckboxes
         
@@ -166,8 +166,8 @@ class ReglaCalculoController {
         //  this.params.formulaExplicita
         String formaExplicita = evalFormula.replaceAll("null", '') //borramos nulos
         this.params.formulaExplicita = formaExplicita
-        def resultado = Eval.me(formaExplicita)
-        println("\nResultado: "+resultado)
+        //def resultado = Eval.me(formaExplicita)
+        //println("\nResultado: "+resultado)
         //render("<br>Presave params: <br>"+params+"<br>")
         render(template: "concepto",  model:[formulaExplicita: formaExplicita]) 
     }
