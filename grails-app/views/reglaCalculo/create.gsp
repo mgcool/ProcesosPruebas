@@ -25,13 +25,13 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:reglaCalculoInstance, action:'presave', params:params]" >
+			<g:form url="[resource:reglaCalculoInstance, action:'save', params:params]" >
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">
 					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-                                        <g:submitToRemote url="[action: 'formaExplicita']" class="save" value="Validar Conceptos" update="formaExplicita"/>
+                                        <g:submitToRemote url="[action: 'formaExplicita']" class="sql" value="Validar Conceptos" update="formaExplicita"/>
 				</fieldset>
 			</g:form>
 		</div>

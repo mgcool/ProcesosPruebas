@@ -16,5 +16,6 @@ class ReglaCalculo {
     String  valorAsignado1
     
     static constraints = {
+         formulaExplicita(maxSize: 4000)
     }
 }

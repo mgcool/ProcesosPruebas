@@ -1,6 +1,6 @@
 <%@ page import="procesostest.ReglaCalculo" %>
 <%@ page import="procesostest.Concepto_RC" %>
-
+<%@ page import="procesostest.Proceso" %>
 
 <div class="fieldcontain ${hasErrors(bean: reglaCalculoInstance, field: 'iniVig', 'error')} required">
 	<label for="iniVig">
