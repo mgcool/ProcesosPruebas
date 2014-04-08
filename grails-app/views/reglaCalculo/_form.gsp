@@ -20,6 +20,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: reglaCalculoInstance, field: 'status', 'error')} required">
+	<label for="status">
+		<g:message code="reglaCalculo.status.label" default="status" />
+	</label>
+	<g:textField name="status" value="${reglaCalculoInstance?.status}"/>
+
+</div>
+
+
 <div class="fieldcontain ${hasErrors(bean: reglaCalculoInstance, field: 'formulaConceptual', 'error')} ">
 	<label for="formulaConceptual">
 		<g:message code="reglaCalculo.formulaConceptual.label" default="Formula Conceptual" />
