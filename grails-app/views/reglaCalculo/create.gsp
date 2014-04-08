@@ -31,6 +31,7 @@
 				</fieldset>
 				<fieldset class="buttons">
 					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                                        <g:submitToRemote url="[action: 'presave']" class="sql" value="Ejecutar Formula" />
                                         <g:submitToRemote url="[action: 'formaExplicita']" class="sql" value="Validar Conceptos" update="formaExplicita"/>
 				</fieldset>
 			</g:form>
