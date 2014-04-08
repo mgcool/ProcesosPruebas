@@ -140,12 +140,13 @@ class ReglaCalculoController {
                     //render(this.params.opIni[m]+this.params.opt1[m]+this.params.cid[m]+this.params.opt2[m])            
                     println(this.params.cid[m]+"\n")
                     query = this.params.cid[m]
-                    //Sin ejecucion de query, hasta que se llame a ejecucion la regla
+                    //Sin ejecucion de query, hasta que se llame a ejecucion la regla, encerrar entre etiquetas #query los correspondientes
                     //try {
                         //sql.execute(query)
                         //sql.eachRow(query){ row ->
                         //    println("${row[0]}")
                             //this.params.cid[m] = row[0]
+                            this.params.cid[m] = "#query"+this.params.cid[m]+"#query#"
                         //}
                         //println("<strong>Query ejecutado!</strong> <br>")
                     //} catch (Exception e){
